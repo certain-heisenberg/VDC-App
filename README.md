@@ -1,10 +1,11 @@
 # VDC-App
 
-Virtual Dental Clinic
-
-Make sure react-native and package-manager 'npx' is installed on your system.
+## Virtual Dental Clinic
 
 To see the app running in your mobile, follow the below steps:
+
+Make sure 'react-native' and package-manager 'npx' is installed on your system.
+
 ```
 git clone https://github.com/kineticdud/VDC-App.git
 cd VDC-App
