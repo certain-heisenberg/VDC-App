@@ -12,12 +12,16 @@ import {
   StatusBar,
 } from 'react-native';
 
+import Header from './src/components/Header/index';
+import PosterList from './src/components/PosterList/index';
+
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-
+        <Header />
+        <PosterList />
       </SafeAreaView>
     </>
   );

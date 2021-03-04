@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        elevation: 10
     },
     logo: {
         width: 100,
@@ -20,6 +21,6 @@ const styles = StyleSheet.create({
         width: 25,
         resizeMode: 'contain'
     }
-})
+});
 
 export default styles;
