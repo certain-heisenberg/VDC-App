@@ -4,8 +4,12 @@ import { View, ImageBackground, Text, StyleSheet } from 'react-native';
 import styles from './styles';
 import Button from '../Button/index';
 
+import { useNavigation } from '@react-navigation/native';
+
 const PosterItem = (props) => {
   const { image, name, tagLine } = props.poster;
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.posterContainer}>
@@ -17,14 +21,15 @@ const PosterItem = (props) => {
       </View>
 
       <View style={styles.buttonsContainer}>
-        <Button type='primary' content={'Log In'}
-          onPress={() => { console.warn('Log In was pressed') }} />
+        <Button type='primary' content={'Get Started'}
+          onPress={() => navigation.navigate('Welcome Screen')}
+        />
 
-        <Button type='secondary' content={'Register'}
-          onPress={() => { console.warn('Register was pressed') }} />
+        {/* <Button type='secondary' content={'Register'}
+          onPress={() => { console.warn("Register Pressed") }} /> */}
       </View>
     </View>
   );
-}
+};
 
 export default PosterItem;

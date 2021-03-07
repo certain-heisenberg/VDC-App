@@ -10,6 +10,11 @@
       "StackName": "amplify-vdc-dev-40942",
       "StackId": "arn:aws:cloudformation:ca-central-1:593034894382:stack/amplify-vdc-dev-40942/895d4b60-7d3a-11eb-a7dd-0ad2f3beacde",
       "AmplifyAppId": "d3ffmtxl692617"
+    },
+    "categories": {
+      "auth": {
+        "vdcbea1a2ff": {}
+      }
     }
   }
 }

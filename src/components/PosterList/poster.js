@@ -5,17 +5,14 @@ const poster = [{
 }, {
   name: 'Your Personal Clinic',
   // tagLine: 'Order Online for',
-  // taglineCTA: 'Touchless Delivery',
   image: require('../../../assets/images/about-bg.jpg'),
 }, {
   name: 'We Care You',
   // tagLine: 'Order Online for',
-  // taglineCTA: 'Touchless Delivery',
   image: require('../../../assets/images/team-image1.jpg'),
 }, {
   name: 'Book Now',
   // tagLine: 'Order Online for',
-  // taglineCTA: 'Touchless Delivery',
   image: require('../../../assets/images/team-image3.jpg'),
 }];
 
