@@ -2,6 +2,8 @@
 
 ## Virtual Dental Clinic
 
+### Below tutorial is compatible with Ubuntu development envirnoment with App running on Android using React Native CLI. For other setup, please check [here](https://reactnative.dev/docs/environment-setup)
+
 To see the app running in your mobile, follow the below steps:
 
 Make sure 'react-native' and package-manager 'npx' is installed on your system.
