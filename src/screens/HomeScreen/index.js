@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
@@ -9,6 +9,7 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.container}>
+
             <Pressable style={styles.button}
                 onPress={() => navigation.navigate('Make Appointment Screen 1')}
             >
@@ -26,7 +27,7 @@ const HomeScreen = () => {
                 <Text style={styles.buttonText}>Doctors Nearby</Text>
             </Pressable>
 
-        </View>
+        </View >
     );
 };
 

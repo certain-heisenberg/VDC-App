@@ -28,6 +28,7 @@ const MakeAppointmentScreen2 = () => {
                     placeholder="Gender"
                     value={gender}
                     type="text"
+                    onSubmitEditing={next}
                 />
             </View>
 

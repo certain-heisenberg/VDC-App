@@ -11,6 +11,7 @@ import AppointmentScreen from '../screens/AppointmentScreen/index';
 import MakeAppointmentScreen1 from '../screens/MakeAppointmentScreen/screen1';
 import MakeAppointmentScreen2 from '../screens/MakeAppointmentScreen/screen2';
 import MakeAppointmentScreen3 from '../screens/MakeAppointmentScreen/screen3';
+import PersonalInfoScreen from '../screens/PersonaInfoScreen/index';
 
 const Stack = createStackNavigator();
 
@@ -76,6 +77,14 @@ const Router = () => {
                 <Stack.Screen
                     name={'Make Appointment Screen 3'}
                     component={MakeAppointmentScreen3}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+
+                <Stack.Screen
+                    name={'Personal Info Screen'}
+                    component={PersonalInfoScreen}
                     options={{
                         headerShown: false,
                     }}

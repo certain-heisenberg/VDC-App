@@ -2,31 +2,41 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#64b5f6',
         height: '100%',
         flex: 1,
         width: '100%',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
+        backgroundColor: '#fff'
     },
     textContainer: {
         backgroundColor: '#fff',
-        height: 400,
+        height: 110,
         width: '100%',
         resizeMode: 'contain',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
+        // marginHorizontal: 20,
+        marginBottom: 20,
+        paddingLeft: 5,
     },
     button: {
-        backgroundColor: '#f15454',
         height: 50,
         borderRadius: 10,
         marginBottom: 20,
         marginHorizontal: 20,
         justifyContent: 'center',
         alignItems: 'center',
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingBottom: 10,
     },
     buttonText: {
         fontSize: 20,
-        fontWeight: 'bold',
-        color: 'white'
+        color: 'black'
     },
 });
 

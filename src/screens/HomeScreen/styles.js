@@ -7,17 +7,17 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     button: {
-        backgroundColor: '#f15454',
+        backgroundColor: 'black',
         height: 100,
         marginHorizontal: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50,
+        borderRadius: 10,
         marginBottom: 20
     },
     buttonText: {
-        fontWeight: 'bold',
-        fontSize: 20,
+        // fontWeight: 'bold',
+        fontSize: 25,
         color: '#ffffff'
     }
 });
