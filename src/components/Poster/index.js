@@ -22,7 +22,7 @@ const PosterItem = (props) => {
 
       <View style={styles.buttonsContainer}>
         <Button type='primary' content={'Get Started'}
-          onPress={() => navigation.navigate('Welcome Screen')}
+          onPress={() => navigation.navigate('Introdction Screen')}
         />
 
         {/* <Button type='secondary' content={'Register'}

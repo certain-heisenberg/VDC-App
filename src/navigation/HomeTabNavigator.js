@@ -6,6 +6,8 @@ import PatientProfile from '../screens/PatientProfile/index';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import HomeScreen from '../screens/HomeScreen/index';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -16,11 +18,11 @@ const HomeTabNavigator = () => {
                 activeTintColor: '#f15454',
             }}>
             <Tab.Screen
-                name={'Appointment'}
-                component={PatientProfile}
+                name={'Home'}
+                component={HomeScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <Fontisto name="calendar" size={25} color={color} />
+                        <Fontisto name="home" size={25} color={color} />
                     )
                 }}
             />
