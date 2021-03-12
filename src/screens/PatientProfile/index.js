@@ -28,7 +28,14 @@ const PatientProfile = () => {
                 <Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 25 }}>Name</Text>
             </View>
 
-            <Pressable style={styles.button}
+            <Pressable style={({ pressed }) => [
+                styles.button,
+                {
+                    backgroundColor: pressed
+                        ? '#DCDCDC'
+                        : 'transparent'
+                },
+            ]}
                 onPress={() => navigation.navigate('Personal Info Screen')}
                 type='outline'
             >
@@ -36,7 +43,14 @@ const PatientProfile = () => {
                 <Fontisto name="person" size={22} style={{ paddingLeft: 20 }} />
             </Pressable>
 
-            <Pressable style={styles.button}
+            <Pressable style={({ pressed }) => [
+                styles.button,
+                {
+                    backgroundColor: pressed
+                        ? '#DCDCDC'
+                        : 'transparent'
+                },
+            ]}
                 // onPress={}
                 type='outline'
             >
@@ -44,7 +58,14 @@ const PatientProfile = () => {
                 <Fontisto name="credit-card" size={22} style={{ paddingLeft: 20 }} />
             </Pressable>
 
-            <Pressable style={styles.button}
+            <Pressable style={({ pressed }) => [
+                styles.button,
+                {
+                    backgroundColor: pressed
+                        ? '#DCDCDC'
+                        : 'transparent'
+                },
+            ]}
                 // onPress={}
                 type='outline'
             >
@@ -52,7 +73,14 @@ const PatientProfile = () => {
                 <Fontisto name="question" size={22} style={{ paddingLeft: 20 }} />
             </Pressable>
 
-            <Pressable style={styles.button}
+            <Pressable style={({ pressed }) => [
+                styles.button,
+                {
+                    backgroundColor: pressed
+                        ? '#DCDCDC'
+                        : 'transparent'
+                },
+            ]}
                 onPress={signout}
                 type='outline'
             >

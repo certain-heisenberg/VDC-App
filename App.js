@@ -19,14 +19,16 @@ Amplify.configure(config);
 import PosterList from './src/components/PosterList/index';
 import Router from './src/navigation/Router';
 import Introduction from './src/screens/Introduction/index';
+import CustomListItem from './src/components/CustomList/index';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       {/* <Introduction /> */}
-      <Router />
+      {/* <Router /> */}
       {/* <PosterList /> */}
+      <CustomListItem />
     </>
   );
 };

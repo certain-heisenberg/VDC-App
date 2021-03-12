@@ -7,11 +7,25 @@ const AppointmentScreen = () => {
     return (
         <View style={styles.container}>
             <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
-                <Pressable style={styles.button}>
+                <Pressable style={({ pressed }) => [
+                    styles.button,
+                    {
+                        backgroundColor: pressed
+                            ? 'white'
+                            : '#f15454'
+                    },
+                ]}>
                     <Text style={styles.buttonText}>Chat</Text>
                 </Pressable>
 
-                <Pressable style={styles.button}>
+                <Pressable style={({ pressed }) => [
+                    styles.button,
+                    {
+                        backgroundColor: pressed
+                            ? 'white'
+                            : '#f15454'
+                    },
+                ]}>
                     <Text style={styles.buttonText}
 
                     >Video Call</Text>
