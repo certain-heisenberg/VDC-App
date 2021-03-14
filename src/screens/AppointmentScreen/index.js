@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Text, View, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
 
 const AppointmentScreen = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
@@ -25,7 +28,9 @@ const AppointmentScreen = () => {
                             ? 'white'
                             : '#f15454'
                     },
-                ]}>
+                ]}
+                    onPress={() => navigation.navigate('Video Login Screen')}
+                >
                     <Text style={styles.buttonText}
 
                     >Video Call</Text>

@@ -6,7 +6,6 @@
  * @format
  * @flow strict-local
  */
-import AsyncStorage from '@react-native-community/async-storage';
 import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
@@ -15,6 +14,17 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Amplify from 'aws-amplify';
 import config from './src/aws-exports';
 Amplify.configure(config);
+
+import {
+  RTCPeerConnection,
+  RTCIceCandidate,
+  RTCSessionDescription,
+  RTCView,
+  MediaStream,
+  MediaStreamTrack,
+  mediaDevices,
+  registerGlobals
+} from 'react-native-webrtc';
 
 import PosterList from './src/components/PosterList/index';
 import Router from './src/navigation/Router';
@@ -26,11 +36,41 @@ const App: () => React$Node = () => {
     <>
       <StatusBar barStyle="dark-content" />
       {/* <Introduction /> */}
-      {/* <Router /> */}
+      <Router />
       {/* <PosterList /> */}
-      <CustomListItem />
+      {/* <CustomListItem /> */}
     </>
   );
 };
 
 export default App;
+
+// import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+
+// import LoginScreen from './src/screens/VideoCall/LoginScreen';
+// import CallScreen from './src/screens/VideoCall/CallScreen';
+// import { SafeAreaView } from 'react-native-safe-area-context';
+
+// const Stack = createStackNavigator();
+
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen
+//           name="Login"
+//           component={LoginScreen}
+//           options={{ headerShown: false }}
+//         />
+//         <Stack.Screen
+//           name="Call"
+//           component={CallScreen}
+//         />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
+
+// export default App;
