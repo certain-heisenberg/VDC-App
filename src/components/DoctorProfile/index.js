@@ -2,9 +2,16 @@ import React from 'react';
 import { View, KeyboardAvoidingView, Text, Pressable, StyleSheet, ActivityIndicator, Image, SafeAreaView } from 'react-native';
 
 import styles from './styles';
+import { useNavigation, } from '@react-navigation/native';
+
 
 const DoctorProfile = (props) => {
-    const { image, name, speciality, experience, fee } = props.profile;
+    const { id, image, name, speciality, experience, fee } = props.profile;
+    const navigation = useNavigation();
+
+    const next = () => {
+        navigation.navigate('Make Appointment Screen 5', { id });
+    };
 
     return (
         <View style={styles.cardContainer}>
@@ -26,6 +33,9 @@ const DoctorProfile = (props) => {
                                 : '#f15454'
                         },
                     ]}
+
+                    onPress={next}
+
                 >
                     <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'white' }}>View more details</Text>
                 </Pressable>
