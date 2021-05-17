@@ -11,6 +11,7 @@ import AppointmentScreen from '../screens/AppointmentScreen/index';
 import MakeAppointmentScreen1 from '../screens/MakeAppointmentScreen/screen1';
 import MakeAppointmentScreen2 from '../screens/MakeAppointmentScreen/screen2';
 import MakeAppointmentScreen3 from '../screens/MakeAppointmentScreen/screen3';
+import MakeAppointmentScreen4 from '../screens/MakeAppointmentScreen/screen4';
 import PersonalInfoScreen from '../screens/PersonaInfoScreen/index';
 import VideoLoginScreen from '../screens/VideoCall/VideoLoginScreen';
 import CallScreen from '../screens/VideoCall/CallScreen';
@@ -21,6 +22,13 @@ const Router = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
+                <Stack.Screen
+                    name={'Make Appointment Screen 1'}
+                    component={MakeAppointmentScreen1}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
                 <Stack.Screen
                     name={'Poster List'}
                     component={PosterList}
@@ -61,13 +69,7 @@ const Router = () => {
                     }}
                 />
 
-                <Stack.Screen
-                    name={'Make Appointment Screen 1'}
-                    component={MakeAppointmentScreen1}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
+
 
                 <Stack.Screen
                     name={'Make Appointment Screen 2'}
@@ -83,6 +85,15 @@ const Router = () => {
                         headerShown: false,
                     }}
                 />
+
+                <Stack.Screen
+                    name={'Make Appointment Screen 4'}
+                    component={MakeAppointmentScreen4}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+
 
                 <Stack.Screen
                     name={'Personal Info Screen'}

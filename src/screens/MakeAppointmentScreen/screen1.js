@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { View, KeyboardAvoidingView, Text, ImageBackground, Pressable, StyleSheet } from 'react-native';
-import { Input } from 'react-native-elements';
-
+import { View, ScrollView, KeyboardAvoidingView, Text, ImageBackground, Pressable, StyleSheet, TextInput, ActivityIndicator } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,33 +10,83 @@ const MakeAppointmentScreen1 = () => {
     const next = () => navigation.navigate('Make Appointment Screen 2');
 
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [contact, setContact] = useState("");
+    const [age, setAge] = useState("");
+    const [pin, setPin] = useState("");
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
 
     return (
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
             <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Create an Appointment</Text>
-            <View style={styles.textContainer}>
-                <Input onChangeText={(text) => setName(text)}
-                    autoFocus
-                    placeholder="Full Name"
-                    value={name}
-                    type="text"
-                />
-                <Input onChangeText={(text) => setEmail(text)}
-                    placeholder="Email"
-                    type="email"
-                    value={email}
-                />
-                <Input onChangeText={(text) => setContact(text)}
-                    placeholder="Contact"
-                    value={contact}
-                    type="text"
-                    onSubmitEditing={next}
-                />
-            </View>
+            <ScrollView style={styles.textContainer}
+            >
 
-            <Pressable style={({ pressed }) => [
+                <TextInput
+                    style={styles.input}
+                    placeholder={"Full Name"}
+                    value={name}
+                    onChangeText={setName}
+                    autoFocus
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder={"Age"}
+                    value={age}
+                    onChangeText={setAge}
+                />
+
+                {/* {Gender} */}
+
+                <TextInput
+                    style={styles.input}
+                    placeholder={"PIN"}
+                    value={pin}
+                    onChangeText={setPin}
+                />
+
+                <TextInput
+                    style={styles.input}
+                    placeholder={"Address"}
+                    value={address}
+                    onChangeText={setAddress}
+                />
+
+                <TextInput
+                    style={styles.input}
+                    placeholder={"City"}
+                    value={city}
+                    onChangeText={setCity}
+                />
+
+                <TextInput
+                    style={styles.input}
+                    placeholder={"State"}
+                    value={state}
+                    onChangeText={setState}
+                />
+
+                <Pressable
+                    onPress={next}
+                    // disabled={loading}
+                    style={({ pressed }) => [
+                        styles.button,
+                        {
+                            backgroundColor: pressed
+                                ? 'white'
+                                : '#f15454'
+                        },
+                    ]}
+                >
+                    {/* {loading && <ActivityIndicator />} */}
+                    {<ActivityIndicator />}
+
+                    <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Next</Text>
+                </Pressable>
+
+            </ScrollView>
+
+            {/* <Pressable style={({ pressed }) => [
                 styles.button,
                 {
                     backgroundColor: pressed
@@ -50,7 +98,9 @@ const MakeAppointmentScreen1 = () => {
                 type='outline'
             >
                 <Text style={styles.buttonText}>Next</Text>
-            </Pressable>
+            </Pressable> */}
+
+
         </KeyboardAvoidingView>
     );
 };
@@ -60,29 +110,43 @@ const styles = StyleSheet.create({
         height: '100%',
         flex: 1,
         width: '100%',
+        // backgroundColor: '#fff',
     },
     textContainer: {
-        // backgroundColor: '#fff',
-        height: 200,
-        width: 300,
+        height: '100%',
+        width: '100%',
         marginHorizontal: 20,
         paddingTop: 10
     },
     button: {
-        backgroundColor: '#f15454',
+        backgroundColor: '#e33062',
+        width: '87%',
         height: 50,
-        borderRadius: 10,
-        marginBottom: 20,
-        marginTop: 50,
-        marginHorizontal: 20,
+        borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-    },
+        marginTop: 30,
+        flexDirection: 'row',
+        marginBottom: 25,
+    }
+    ,
     buttonText: {
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white'
     },
+    input: {
+        fontSize: 18,
+        width: '87%',
+        backgroundColor: 'lightgrey',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 50,
+        marginVertical: 10,
+        borderRadius: 5,
+        padding: 10
+    }
 });
+
 
 export default MakeAppointmentScreen1;

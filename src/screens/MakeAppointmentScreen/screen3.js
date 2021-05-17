@@ -1,75 +1,78 @@
 import React, { useState } from 'react';
-import { View, KeyboardAvoidingView, Text, Pressable, StyleSheet } from 'react-native';
-import { Input } from 'react-native-elements';
+import { View, KeyboardAvoidingView, Text, Pressable, StyleSheet, ActivityIndicator } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-// c7226263ff854462b0b94cf7a15d39fb
-const MakeAppointmentScreen3 = () => {
-    // const navigation = useNavigation();
 
-    const [problem, setProblem] = useState("");
+const MakeAppointmentScreen3 = () => {
+    const navigation = useNavigation();
+
+    const next = () => navigation.navigate('Make Appointment Screen 4');
 
     return (
-        <KeyboardAvoidingView behavior='padding' style={styles.container}>
+        <View style={styles.container}>
+            <Text h3 style={{ fontSize: 30, color: '#f15454', marginTop: 15 }}>Consultation Mode</Text>
 
-            <View style={styles.textContainer}>
-                <Input onChangeText={(text) => setProblem(text)}
-                    placeholder="Problem"
-                    value={problem}
-                    type="text"
-                    autoFocus
-                    style={{ height: 150 }}
-                    multiline={true}
-                />
-            </View>
-
-            <Pressable style={({ pressed }) => [
-                styles.button,
-                {
-                    backgroundColor: pressed
-                        ? 'white'
-                        : '#f15454'
-                },
-            ]}
-                // onPress={}
-                type='outline'
+            <Pressable
+                onPress={next}
+                // disabled={loading}
+                style={({ pressed }) => [
+                    styles.button,
+                    {
+                        backgroundColor: pressed
+                            ? 'white'
+                            : '#f15454'
+                    },
+                ]}
             >
-                <Text style={styles.buttonText}>Submit</Text>
+                {/* {loading && <ActivityIndicator />} */}
+                {<ActivityIndicator />}
+
+                <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Online</Text>
             </Pressable>
-        </KeyboardAvoidingView>
+
+            <Pressable
+                // onPress={next}
+                // disabled={loading}
+                style={({ pressed }) => [
+                    styles.button,
+                    {
+                        backgroundColor: pressed
+                            ? 'white'
+                            : '#f15454'
+                    },
+                ]}
+            >
+                {/* {loading && <ActivityIndicator />} */}
+                {<ActivityIndicator />}
+
+                <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Offline</Text>
+            </Pressable>
+
+
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor: '#64b5f6',
         height: '100%',
         flex: 1,
         width: '100%',
-        // justifyContent: 'space-between',
-    },
-    textContainer: {
-        // backgroundColor: '#fff',
-        height: 200,
-        width: 300,
-        marginHorizontal: 20,
-        paddingTop: 10
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     button: {
-        backgroundColor: '#f15454',
+        backgroundColor: '#e33062',
+        width: '87%',
         height: 50,
-        borderRadius: 10,
-        marginBottom: 20,
-        marginTop: 50,
-        marginHorizontal: 20,
+        borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    buttonText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'white'
+        marginTop: 30,
+        flexDirection: 'row',
     },
 });
 
 export default MakeAppointmentScreen3;
+
+// c7226263ff854462b0b94cf7a15d39fb
