@@ -1,6 +1,6 @@
 projects:
   VDC:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/VDC/build/schema.graphql
     includes:
       - ''
     excludes:
@@ -10,3 +10,6 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: .
+extensions:
+  amplify:
+    version: 3

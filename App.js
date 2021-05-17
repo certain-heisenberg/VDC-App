@@ -10,6 +10,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StripeProvider } from '@stripe/stripe-react-native';
 
 import Amplify from 'aws-amplify';
 import config from './src/aws-exports';
@@ -36,7 +37,10 @@ const App: () => React$Node = () => {
     <>
       <StatusBar barStyle="dark-content" />
       {/* <Introduction /> */}
-      <Router />
+      <StripeProvider publishableKey="pk_test_51Ig6dfSEehnNUNdbrX7XqTBhyIWB1KXPHYxm67ydDevK4KsRDxgUFdIDuFTTTnaUTFC5t2b2RUn9hTotlvBsvc6Z00yTpqRrgx">
+        <Router />
+      </StripeProvider>
+
       {/* <PosterList /> */}
       {/* <CustomListItem /> */}
     </>

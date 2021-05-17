@@ -32,6 +32,12 @@
     "categories": {
       "auth": {
         "vdcbea1a2ff": {}
+      },
+      "function": {
+        "CreatePaymentIntent": {
+          "deploymentBucketName": "amplify-vdc-stage-175553-deployment",
+          "s3Key": "amplify-builds/CreatePaymentIntent-7a592f7a533876366d4a-build.zip"
+        }
       }
     }
   }
