@@ -13,7 +13,7 @@ const MakeAppointmentScreen5 = () => {
     // const navigation = useNavigation();
 
     const [clientSecret, setClientSecret] = useState("");
-    const { initPaymentSheet } = useStripe();
+    const { initPaymentSheet, presentPaymentSheet } = useStripe();
 
     const route = useRoute();
     const id = Math.floor(route.params?.id);
@@ -48,19 +48,41 @@ const MakeAppointmentScreen5 = () => {
         const { error } = await initPaymentSheet({
             paymentIntentClientSecret: clientSecret
         });
-        console.log('Success');
-
         if (error) {
             Alert.alert(error);
         }
+    };
+
+    const openPaymentSheet = async () => {
+        if (!clientSecret) {
+            return;
+        }
+
+        const { error } = await presentPaymentSheet({ clientSecret });
+
+        if (error) {
+            Alert.alert(`Error code: ${error.code}`, error.message);
+        } else {
+            // saveAppointment();
+            Alert.alert('Success', 'Your payment is confirmed!');
+        }
     }
+
+    const saveAppointment = async () => {
+
+    }
+
+    const onPay = () => {
+        openPaymentSheet();
+    };
+
 
     return (
         <SafeAreaView style={styles.container}>
             <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Choose Consultant</Text>
 
             <Pressable
-                // onPress={next}
+                onPress={onPay}
                 // disabled={loading}
                 style={({ pressed }) => [
                     styles.button,

@@ -37,6 +37,10 @@
         "CreatePaymentIntent": {
           "deploymentBucketName": "amplify-vdc-stage-175553-deployment",
           "s3Key": "amplify-builds/CreatePaymentIntent-7a592f7a533876366d4a-build.zip"
+        },
+        "StripeWebHook": {
+          "deploymentBucketName": "amplify-vdc-stage-175553-deployment",
+          "s3Key": "amplify-builds/StripeWebHook-4470442b626871635a41-build.zip"
         }
       }
     }
