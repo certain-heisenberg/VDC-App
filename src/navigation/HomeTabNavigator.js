@@ -7,6 +7,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import HomeScreen from '../screens/HomeScreen/index';
+import PrescriptionList from '../screens/Prescription/screen1';
 
 
 const Tab = createBottomTabNavigator();
@@ -28,7 +29,7 @@ const HomeTabNavigator = () => {
             />
             <Tab.Screen
                 name={'Prescription'}
-                component={PatientProfile}
+                component={PrescriptionList}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Fontisto name="paperclip" size={25} color={color} />

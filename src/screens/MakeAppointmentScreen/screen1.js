@@ -7,7 +7,7 @@ const MakeAppointmentScreen1 = () => {
 
     const navigation = useNavigation();
 
-    const next = () => navigation.navigate('Make Appointment Screen 4');
+    const next = () => navigation.navigate('Make Appointment Screen 2');
 
     const [name, setName] = useState("");
     const [age, setAge] = useState("");

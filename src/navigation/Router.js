@@ -16,6 +16,7 @@ import PersonalInfoScreen from '../screens/PersonaInfoScreen/index';
 import VideoLoginScreen from '../screens/VideoCall/VideoLoginScreen';
 import CallScreen from '../screens/VideoCall/CallScreen';
 import MakeAppointmentScreen5 from '../screens/MakeAppointmentScreen/screen5';
+import PrescriptionScreen from '../screens/Prescription/screen2';
 
 const Stack = createStackNavigator();
 
@@ -23,13 +24,7 @@ const Router = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen
-                    name={'Make Appointment Screen 1'}
-                    component={MakeAppointmentScreen1}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
+
                 <Stack.Screen
                     name={'Poster List'}
                     component={PosterList}
@@ -70,7 +65,13 @@ const Router = () => {
                     }}
                 />
 
-
+                <Stack.Screen
+                    name={'Make Appointment Screen 1'}
+                    component={MakeAppointmentScreen1}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
 
                 <Stack.Screen
                     name={'Make Appointment Screen 2'}
@@ -127,6 +128,15 @@ const Router = () => {
                         headerShown: false,
                     }}
                 />
+
+                <Stack.Screen
+                    name={'Prescription Screen'}
+                    component={PrescriptionScreen}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+
 
             </Stack.Navigator>
         </NavigationContainer>

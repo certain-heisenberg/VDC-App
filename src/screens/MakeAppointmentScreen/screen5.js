@@ -8,6 +8,7 @@ import { useStripe } from '@stripe/stripe-react-native';
 
 import doctors from './doctors';
 import { Alert } from 'react-native';
+import { ScrollView } from 'react-native';
 
 const MakeAppointmentScreen5 = () => {
     // const navigation = useNavigation();
@@ -18,7 +19,7 @@ const MakeAppointmentScreen5 = () => {
     const route = useRoute();
     const id = Math.floor(route.params?.id);
 
-    const { image, name, speciality, experience, fee, qualification, description, language } = doctors[id];
+    const { image, name, speciality, experience, fee, qualification, description, language, coordinate } = doctors[id];
 
     const amount = Math.floor(fee);
 
@@ -68,9 +69,9 @@ const MakeAppointmentScreen5 = () => {
         }
     }
 
-    const saveAppointment = async () => {
+    // const saveAppointment = async () => {
 
-    }
+    // }
 
     const onPay = () => {
         openPaymentSheet();
@@ -78,8 +79,34 @@ const MakeAppointmentScreen5 = () => {
 
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Choose Consultant</Text>
+        <ScrollView style={styles.container}>
+            <Image style={styles.image}
+                source={image}
+            />
+
+            <View style={{ alignItems: 'center' }}>
+                <Text style={{ fontSize: 18, marginTop: 10, marginLeft: 7 }}>{name}</Text>
+            </View>
+
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+                <Text style={{ marginLeft: 7 }}>{speciality}</Text>
+                <Text style={{ marginRight: 7 }}>Fee: {fee}</Text>
+            </View>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+                <Text style={{ marginLeft: 7 }}>{experience} Years of experience</Text>
+                <Text style={{ marginRight: 7 }}>{language}</Text>
+            </View>
+
+            <Text style={{ fontSize: 16, marginTop: 10, marginLeft: 7 }}>Bio</Text>
+
+            <Text style={{ fontSize: 16, marginTop: 5, marginBottom: 10, marginLeft: 7 }}>{description}</Text>
+
+            <Text style={{ fontSize: 16, marginVertical: 10, marginLeft: 7 }}>Clinic Address</Text>
+            {/* {Address} */}
+            <Text style={{ fontSize: 16, marginLeft: 7 }}>latitude: {coordinate.latitude}</Text>
+            <Text style={{ fontSize: 16, marginLeft: 7 }}>longitude: {coordinate.longitude}</Text>
 
             <Pressable
                 onPress={onPay}
@@ -96,9 +123,9 @@ const MakeAppointmentScreen5 = () => {
                 {/* {loading && <ActivityIndicator />} */}
                 {<ActivityIndicator />}
 
-                <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Next</Text>
+                <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Schedule Meet</Text>
             </Pressable>
-        </SafeAreaView>
+        </ScrollView>
     );
 };
 
@@ -118,6 +145,12 @@ const styles = StyleSheet.create({
         marginTop: 30,
         flexDirection: 'row',
         marginBottom: 25,
+        marginHorizontal: 23
+    },
+    image: {
+        width: '100%',
+        height: 325,
+        resizeMode: 'cover',
     }
 
 });
