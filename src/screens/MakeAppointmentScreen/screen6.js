@@ -98,7 +98,7 @@ const MakeAppointmentScreen6 = () => {
         setDatePickerVisibility(false);
     };
 
-    const handleDateConfirm = (date) => {
+    const handleDateConfirm = async (date) => {
         const [day, month, chosenDate, year] = date.toString().split(" ");
 
         const todayDate = new Date();
@@ -119,22 +119,27 @@ const MakeAppointmentScreen6 = () => {
             'Dec': '12'
         }
 
+        const flag = 1;
+
         if (parseInt(year) < parseInt(curYear)) {
             hideDatePicker();
-            setDateBool(false);
             Alert.alert("Invalid Year");
+            flag = 0;
         }
 
         if (parseInt(year) === parseInt(curYear) && parseInt(months[month]) < parseInt(months[curMonth])) {
-            hideDatePicker();
-            setDateBool(false);
             Alert.alert("Invalid Month");
+            flag = 0;
         }
 
         if (parseInt(year) === parseInt(curYear) && parseInt(months[month]) === parseInt(months[curMonth]) && parseInt(chosenDate) < parseInt(curDate)) {
             hideDatePicker();
-            setDateBool(false);
             Alert.alert("Invalid Date");
+            flag = 0;
+        }
+
+        if (flag === 0) {
+            setDateBool(false);
         }
 
 
@@ -145,7 +150,7 @@ const MakeAppointmentScreen6 = () => {
         setFDate(chosenDate);
         setFMonth(month);
         setFYear(year);
-        console.log("Date Success");
+        // console.log("Date Success");
 
         setDateBool(true);
         hideDatePicker();
@@ -193,7 +198,8 @@ const MakeAppointmentScreen6 = () => {
         setFMinute(minute);
 
         setTimeBool(true);
-        setIsEnabled(true);
+
+        setIsEnabled(dateBool);
         hideTimePicker();
     };
 
