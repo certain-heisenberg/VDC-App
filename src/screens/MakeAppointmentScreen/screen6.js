@@ -98,7 +98,7 @@ const MakeAppointmentScreen6 = () => {
         setDatePickerVisibility(false);
     };
 
-    const handleDateConfirm = async (date) => {
+    const handleDateConfirm = (date) => {
         const [day, month, chosenDate, year] = date.toString().split(" ");
 
         const todayDate = new Date();
@@ -128,6 +128,7 @@ const MakeAppointmentScreen6 = () => {
         }
 
         if (parseInt(year) === parseInt(curYear) && parseInt(months[month]) < parseInt(months[curMonth])) {
+            hideDatePicker();
             Alert.alert("Invalid Month");
             flag = 0;
         }
