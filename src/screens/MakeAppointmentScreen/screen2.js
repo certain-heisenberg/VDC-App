@@ -83,52 +83,79 @@
 
 
 import React, { useState } from 'react';
-import { View, ScrollView, KeyboardAvoidingView, Text, Pressable, StyleSheet, TextInput, ActivityIndicator } from 'react-native';
+import { SafeAreaView, View, ScrollView, Platform, KeyboardAvoidingView, Text, Alert, Pressable, StyleSheet, TextInput, ActivityIndicator } from 'react-native';
 
+import DropDownPicker from 'react-native-dropdown-picker';
 import { useNavigation } from '@react-navigation/native';
+
+import specialist from './specialist';
 
 const MakeAppointmentScreen2 = () => {
 
     const navigation = useNavigation();
 
-    const next = () => navigation.navigate('Make Appointment Screen 3');
 
-    const [type, setType] = useState("");
     const [problem, setProblem] = useState("");
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState(specialist);
+
+    const handlePress = () => {
+        if (problem.length === 0) {
+            Alert.alert("Please give brief description");
+        }
+        else if (value === null) {
+            Alert.alert("Please select specialist");
+        }
+        else {
+            navigation.navigate('Make Appointment Screen 3');
+        }
+    }
 
 
     return (
-        <KeyboardAvoidingView behavior='padding' style={styles.container}>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container}>
             <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Problem</Text>
-            <ScrollView style={styles.textContainer}
+            <SafeAreaView style={styles.textContainer}
             >
-                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>Type</Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder={"Type"}
-                    value={type}
-                    onChangeText={setType}
-                    autoFocus
-                />
-
-
 
                 <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>Description</Text>
 
                 <TextInput
-                    style={[styles.input, { height: 150, textAlignVertical: 'top' }]}
+                    style={[styles.input, { height: 160, textAlignVertical: 'top' }]}
                     placeholder={"Brief Description"}
                     value={problem}
                     onChangeText={setProblem}
                     multiline={true}
                 />
+                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>Specialist</Text>
+
+                <DropDownPicker
+                    open={open}
+                    value={value}
+                    items={items}
+                    setOpen={setOpen}
+                    setValue={setValue}
+                    setItems={setItems}
+                    placeholder="Select concerned specialist"
+                    containerStyle={{
+                        width: '87%',
+                        marginTop: 13
+                    }}
+                    listMode="SCROLLVIEW"
+                />
+
+
+
+
+
+
 
 
 
 
                 <Pressable
-                    onPress={next}
+                    onPress={handlePress}
                     // disabled={loading}
                     style={({ pressed }) => [
                         styles.button,
@@ -145,7 +172,7 @@ const MakeAppointmentScreen2 = () => {
                     <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Book</Text>
                 </Pressable>
 
-            </ScrollView>
+            </SafeAreaView>
 
             {/* <Pressable style={({ pressed }) => [
                 styles.button,
@@ -177,7 +204,8 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         marginHorizontal: 20,
-        paddingTop: 10
+        paddingTop: 10,
+        flex: 1,
     },
     button: {
         backgroundColor: '#e33062',
@@ -199,7 +227,7 @@ const styles = StyleSheet.create({
     input: {
         fontSize: 18,
         width: '87%',
-        backgroundColor: 'lightgrey',
+        backgroundColor: 'white',
         height: 50,
         marginVertical: 10,
         borderRadius: 5,

@@ -24,6 +24,7 @@
     "graphql": "^15.5.0",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-dropdown-picker": "^5.1.15",
     "react-native-elements": "^3.3.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-incall-manager": "^3.3.0",
