@@ -1,0 +1,13 @@
+type Mutation{
+  createPaymentIntent(amount: Int!): PaymentIntent! @function(name: "CreatePaymentIntent-${env}")
+}
+
+type PaymentIntent{
+  clientSecret: String!
+}
+
+type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}

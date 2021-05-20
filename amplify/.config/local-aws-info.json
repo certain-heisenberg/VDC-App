@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\ACER\\.amplify\\awscloudformation\\5H7lhFPtlY"
+  },
+  "staging": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\ACER\\.amplify\\awscloudformation\\lPF4nYksnL"
+  },
+  "stage": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\ACER\\.amplify\\awscloudformation\\Axyu3Hv247"
+  }
+}

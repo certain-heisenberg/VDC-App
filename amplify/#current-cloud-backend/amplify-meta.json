@@ -1,0 +1,139 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vdc-stage-175553-authRole",
+      "UnauthRoleArn": "arn:aws:iam::593034894382:role/amplify-vdc-stage-175553-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::593034894382:role/amplify-vdc-stage-175553-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-vdc-stage-175553-deployment",
+      "UnauthRoleName": "amplify-vdc-stage-175553-unauthRole",
+      "StackName": "amplify-vdc-stage-175553",
+      "StackId": "arn:aws:cloudformation:us-east-2:593034894382:stack/amplify-vdc-stage-175553/df33de60-b641-11eb-bb97-02698afba620",
+      "AmplifyAppId": "djs4wlxnv0tuy"
+    }
+  },
+  "auth": {
+    "vdcbea1a2ff": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-vdc-stage-175553-deployment/amplify-cfn-templates/auth/vdcbea1a2ff-cloudformation-template.yml",
+        "logicalId": "authvdcbea1a2ff"
+      },
+      "lastPushTimeStamp": "2021-05-18T07:37:22.510Z",
+      "output": {
+        "UserPoolId": "us-east-2_0k068w8zU",
+        "AppClientIDWeb": "1l9vrvi8mvun923v3731dodiqq",
+        "AppClientID": "3ce38hfdvn2q9od455s1q0a7h6",
+        "IdentityPoolId": "us-east-2:3fcdcb27-6d37-43d4-97b3-ece838d82ce8",
+        "IdentityPoolName": "vdcbea1a2ff_identitypool_bea1a2ff__stage",
+        "UserPoolName": "vdcbea1a2ff_userpool_bea1a2ff"
+      },
+      "lastPushDirHash": "Lorqb9vtBkCGZLwu3ozm9qvMu+Q="
+    }
+  },
+  "api": {
+    "VDC": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "mq4wxfoy6rdmbaj4iduzd47xna",
+        "GraphQLAPIEndpointOutput": "https://gg2mnxpkjrclvp2asev7mnl3ty.appsync-api.us-east-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-y4emdnihtjdappupien5bdbhxm"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-vdc-stage-175553-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiVDC"
+      },
+      "lastPushTimeStamp": "2021-05-18T07:37:22.512Z",
+      "lastPushDirHash": "kdZl3kpZrCgJdDQjykwCrUmYgr8="
+    },
+    "StripeWebHook": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "StripeWebHook",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-vdc-stage-175553-deployment/amplify-cfn-templates/api/StripeWebHook-cloudformation-template.json",
+        "logicalId": "apiStripeWebHook"
+      },
+      "lastPushTimeStamp": "2021-05-18T07:37:22.526Z",
+      "output": {
+        "ApiName": "StripeWebHook",
+        "RootUrl": "https://otjlwhu4a2.execute-api.us-east-2.amazonaws.com/stage",
+        "ApiId": "otjlwhu4a2"
+      },
+      "lastPushDirHash": "A4SiZS3F0WODh5XpZuSyLpao1rM="
+    }
+  },
+  "function": {
+    "CreatePaymentIntent": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-05-18T07:36:00.373Z",
+      "lastPackageTimeStamp": "2021-05-18T07:36:01.048Z",
+      "distZipFilename": "CreatePaymentIntent-596d765a507561473650-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-vdc-stage-175553-deployment",
+        "s3Key": "amplify-builds/CreatePaymentIntent-596d765a507561473650-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-vdc-stage-175553-deployment/amplify-cfn-templates/function/CreatePaymentIntent-cloudformation-template.json",
+        "logicalId": "functionCreatePaymentIntent"
+      },
+      "lastPushTimeStamp": "2021-05-18T07:37:22.526Z",
+      "output": {
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:593034894382:function:CreatePaymentIntent-stage",
+        "Name": "CreatePaymentIntent-stage",
+        "LambdaExecutionRole": "vdcLambdaRolefaab2470-stage"
+      },
+      "lastPushDirHash": "zlhJzTUtTVxk8aQcuFsApyTcP80="
+    },
+    "StripeWebHook": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-05-18T07:36:00.374Z",
+      "lastPackageTimeStamp": "2021-05-18T07:36:00.451Z",
+      "distZipFilename": "StripeWebHook-4e6a584a56414f645655-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-vdc-stage-175553-deployment",
+        "s3Key": "amplify-builds/StripeWebHook-4e6a584a56414f645655-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-vdc-stage-175553-deployment/amplify-cfn-templates/function/StripeWebHook-cloudformation-template.json",
+        "logicalId": "functionStripeWebHook"
+      },
+      "lastPushTimeStamp": "2021-05-18T07:37:22.526Z",
+      "output": {
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:593034894382:function:StripeWebHook-stage",
+        "Name": "StripeWebHook-stage",
+        "LambdaExecutionRole": "vdcLambdaRolecbd42cb9-stage"
+      },
+      "lastPushDirHash": "1JrkTGHOnGGtsiC0L7gonvOY3dM="
+    }
+  }
+}
