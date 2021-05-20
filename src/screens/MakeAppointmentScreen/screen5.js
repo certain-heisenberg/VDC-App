@@ -2,81 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { View, KeyboardAvoidingView, Text, Pressable, StyleSheet, ActivityIndicator, Image, SafeAreaView, FlatList } from 'react-native';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { API, graphqlOperation } from 'aws-amplify';
-import { createPaymentIntent } from '../../../mutations';
-import { useStripe } from '@stripe/stripe-react-native';
 
 import doctors from './doctors';
-import { Alert } from 'react-native';
 import { ScrollView } from 'react-native';
 
 const MakeAppointmentScreen5 = () => {
-    // const navigation = useNavigation();
-
-    const [clientSecret, setClientSecret] = useState("");
-    const { initPaymentSheet, presentPaymentSheet } = useStripe();
-
+    const navigation = useNavigation();
     const route = useRoute();
     const id = Math.floor(route.params?.id);
 
     const { image, name, speciality, experience, fee, qualification, description, language, coordinate } = doctors[id];
 
-    const amount = Math.floor(fee);
-
-    useEffect(() => {
-        fetchPaymentIntent();
-    }, []);
-
-    useEffect(() => {
-        if (clientSecret) {
-            initializePaymentSheet();
-        }
-    }, [clientSecret]);
-
-    const fetchPaymentIntent = async () => {
-        const response = await API.graphql(
-            graphqlOperation(createPaymentIntent, { amount })
-        );
-
-        setClientSecret(response.data.createPaymentIntent.clientSecret);
-    };
-
-    const initializePaymentSheet = async () => {
-        if (!clientSecret) {
-            return;
-        }
-
-        const { error } = await initPaymentSheet({
-            paymentIntentClientSecret: clientSecret
-        });
-        if (error) {
-            Alert.alert(error);
-        }
-    };
-
-    const openPaymentSheet = async () => {
-        if (!clientSecret) {
-            return;
-        }
-
-        const { error } = await presentPaymentSheet({ clientSecret });
-
-        if (error) {
-            Alert.alert(`Error code: ${error.code}`, error.message);
-        } else {
-            // saveAppointment();
-            Alert.alert('Success', 'Your payment is confirmed!');
-        }
+    const handlePress = () => {
+        navigation.navigate('Make Appointment Screen 6', { id });
     }
-
-    // const saveAppointment = async () => {
-
-    // }
-
-    const onPay = () => {
-        openPaymentSheet();
-    };
-
 
     return (
         <ScrollView style={styles.container}>
@@ -109,7 +48,7 @@ const MakeAppointmentScreen5 = () => {
             <Text style={{ fontSize: 16, marginLeft: 7 }}>longitude: {coordinate.longitude}</Text>
 
             <Pressable
-                onPress={onPay}
+                onPress={handlePress}
                 // disabled={loading}
                 style={({ pressed }) => [
                     styles.button,

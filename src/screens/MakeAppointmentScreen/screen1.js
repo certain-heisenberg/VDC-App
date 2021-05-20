@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, ScrollView, KeyboardAvoidingView, Text, ImageBackground, Pressable, StyleSheet, TextInput, ActivityIndicator } from 'react-native';
-
+import { ButtonGroup } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 
 const MakeAppointmentScreen1 = () => {
@@ -15,6 +15,9 @@ const MakeAppointmentScreen1 = () => {
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
+    const [index, setIndex] = useState(0);
+
+    const buttons = ['Male', 'Female'];
 
     return (
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
@@ -34,15 +37,24 @@ const MakeAppointmentScreen1 = () => {
                     placeholder={"Age"}
                     value={age}
                     onChangeText={setAge}
+                    maxLength={2}
+                    keyboardType='numeric'
                 />
 
-                {/* {Gender} */}
+                <ButtonGroup
+                    onPress={setIndex}
+                    selectedIndex={index}
+                    buttons={buttons}
+                    containerStyle={{ height: 35, width: 305, marginLeft: 0 }}
+                />
 
                 <TextInput
                     style={styles.input}
                     placeholder={"PIN"}
                     value={pin}
                     onChangeText={setPin}
+                    maxLength={6}
+                    keyboardType='numeric'
                 />
 
                 <TextInput
