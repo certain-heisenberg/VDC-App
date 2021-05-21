@@ -22,6 +22,7 @@
     "aws-amplify": "^3.3.22",
     "aws-amplify-react-native": "^4.3.1",
     "graphql": "^15.5.0",
+    "popup-ui": "^1.2.2",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-dropdown-picker": "^5.1.15",
