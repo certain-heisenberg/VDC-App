@@ -2,37 +2,26 @@
 
 ## Virtual Dental Clinic
 
-### Below tutorial is compatible with Ubuntu development environment with App running on Android using React Native CLI. For other setup, please check [here](https://reactnative.dev/docs/environment-setup)
+### Below tutorial is for setting up this repository on your system and install the native App initialized using React Native CLI on your device for further development.
+### Before you proceed further, please check [here](https://reactnative.dev/docs/environment-setup) to install required dependencies for running a React Native project in your system.
 
-To see the app running in your mobile, follow the below steps:
+To see the app running in your mobile for development purpose, follow the below steps:
 
-Make sure 'react-native' and package-manager 'npx' is installed on your system.
-
+1) Open a terminal/CLI window.
+2) Copy and paste below commands in your terminal one by one and let the commands to finish. 
+   ```npm install ``` might take 2-5 minutes to finish.
 ```
 git clone https://github.com/kineticdud/VDC-App.git
 cd VDC-App
-npx react-native start
+npm install
 ```
-You can see the App running in your physical device or in a virtual emulator. However,
-using physical device is easier and faster to get started.
+3) If you want to see the app running on an virtual device(emulator), you first need to install Android Studio and set up emulator device. See [here](https://reactnative.dev/docs/environment-setup) if you haven't done so already. <br /> But, if you want to see the app running on a physical device(smartphone). See [here](https://reactnative.dev/docs/running-on-device) for further setup.
+4) If you want to continue using AWS Amplify used in this repository, you need to make an AWS Account and setup Amplify CLI. See [here](https://docs.amplify.aws/start/getting-started/installation/q/integration/react-native#option-2-follow-the-instructions) for Amplify CLI setup.
+5) Initialize Amplify using ```amplify init```, then push to AWS cloud using ```amplify push```.
+6) Start the development server using ```npx react-native start```.
+7) Finally run ```npx react-native run-android``` or ```npx react-native run-ios``` based on the Operating System of mobile device and wait for build to finish.
 
-Follow the below steps to run App on physical device:
-
-1) Enable USB Debugging in your physical device.
-2) Plug in your device via USB to your development machine.
-3) Run '```adb devices```' to check if device is connected to your machine or not.
-4) If device shows up on doing previous step, run '```npx react-native run-android```' and wait for
-   3-4 mins to get the App installed on your device.
-   
-Voilà now you have the App running on your device.
-
-If any problem occurs during installation of App, feel free to check [here](https://reactnative.dev/docs/running-on-device).
+Voilà now you have the App installed and running on your device.
 
 If you want to make changes to this App using your development server, you need
-to connect your device with development server. Follow the below steps for the same:
-
-1) Enable USB Debugging in your physical device.
-2) Plug in your device via USB to your development machine.
-3) Run '```adb -s <device name> reverse tcp:8081 tcp:8081```'
-
-Note: 'device name' can be find by running '```adb devices```'
+to connect your device with development server. See ```Connecting to the development server``` section in [here](https://reactnative.dev/docs/running-on-device)
