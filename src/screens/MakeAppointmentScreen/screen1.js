@@ -5,6 +5,12 @@ import { useNavigation } from '@react-navigation/native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import states from './states';
 
+import Feather from 'react-native-vector-icons/Feather';
+import Entypo from 'react-native-vector-icons/Entypo';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+
 const MakeAppointmentScreen1 = () => {
 
     const navigation = useNavigation();
@@ -63,7 +69,10 @@ const MakeAppointmentScreen1 = () => {
             <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Create an Appointment</Text>
             <ScrollView style={styles.textContainer} keyboardShouldPersistTaps='always'
             >
-                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>Full Name</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Full Name</Text>
+                    <Feather name="user" size={25} color="black" />
+                </View>
                 <TextInput
                     style={styles.input}
                     placeholder={"Full Name"}
@@ -81,7 +90,13 @@ const MakeAppointmentScreen1 = () => {
                     keyboardType='numeric'
                 />
 
-                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>Gender</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Gender</Text>
+                    <MaterialCommunityIcons name="gender-male" size={25} color="black" />
+                    <Text style={{ fontSize: 20, color: 'black', }}>|</Text>
+                    <MaterialCommunityIcons name="gender-female" size={25} color="black" />
+
+                </View>
 
                 <ButtonGroup
                     onPress={setIndex}
@@ -92,11 +107,14 @@ const MakeAppointmentScreen1 = () => {
 
 
 
-                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>PIN</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>PIN</Text>
+                    <Ionicons name="location-outline" size={25} color="black" />
+                </View>
 
                 <TextInput
                     style={styles.input}
-                    placeholder={"Area Pincode"}
+                    placeholder={"Area Code"}
                     value={pin}
                     onChangeText={setPin}
                     maxLength={6}
@@ -120,8 +138,10 @@ const MakeAppointmentScreen1 = () => {
                     listMode="SCROLLVIEW"
                 />
 
-                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>City</Text>
-
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>City</Text>
+                    <MaterialCommunityIcons name="city" size={25} color="black" />
+                </View>
                 <TextInput
                     style={styles.input}
                     placeholder={"City"}
@@ -129,7 +149,10 @@ const MakeAppointmentScreen1 = () => {
                     onChangeText={setCity}
                 />
 
-                <Text style={{ fontSize: 20, color: 'black', marginTop: 15 }}>Address</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Address</Text>
+                    <Entypo name="address" size={25} color="black" />
+                </View>
 
                 <TextInput
                     style={styles.input}
