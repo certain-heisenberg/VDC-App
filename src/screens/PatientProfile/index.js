@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, Pressable } from 'react-native';
+import { View, Text, ImageBackground, Pressable, Image } from 'react-native';
 import { Input } from 'react-native-elements';
 
 import styles from './styles';
@@ -24,7 +24,11 @@ const PatientProfile = () => {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Fontisto name="male" size={50} style={{ paddingLeft: 20, color: 'gray' }} />
+                <Image
+                    source={require('../../../assets/images/defaultAvatar.png')}
+                    style={{ width: 100, backgroundColor: 'white', height: 100, borderRadius: 100 / 2 }}
+                    resizeMode='contain'
+                />
                 <Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 25 }}>Name</Text>
             </View>
 

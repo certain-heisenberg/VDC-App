@@ -38,7 +38,7 @@ const HomeScreen = () => {
                             : 'transparent'
                     },
                 ]}
-                    onPress={() => navigation.navigate('Appointment Screen')}
+                    onPress={() => navigation.navigate('Appointment Screen 1')}
                 >
                     <Text style={styles.buttonText}>Appointments</Text>
                 </Pressable>

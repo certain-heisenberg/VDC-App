@@ -30,7 +30,7 @@
 // export default PersonalInfoScreen;
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, ImageBackground, Pressable } from 'react-native';
+import { View, Text, TextInput, ImageBackground, Pressable, TouchableOpacity, Alert, Image } from 'react-native';
 import { Input } from 'react-native-elements';
 
 import styles from './styles';
@@ -40,17 +40,19 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 
 const PersonalInfoScreen = () => {
     const navigation = useNavigation();
 
-    const [imageSource, setImageSource] = useState(null);
     const [username, setUsername] = useState('iamkkumar99@gmail.com');
     const [email, setEmail] = useState('iamkkumar99@gmail.com');
     const [contact, setContact] = useState('8709560460');
     const [appointmentCount, setAppointmentCount] = useState('5');
     const [isEnabled, setIsEnabled] = useState(false);
+
+    const [imageSource, setImageSource] = useState(null);
 
     const handleEditPress = async () => {
         if (await !isEnabled) {
@@ -64,11 +66,68 @@ const PersonalInfoScreen = () => {
         }
     }
 
+
+    const selectImage = () => {
+        let options = {
+            title: 'Pick an image',
+            maxWidth: 450,
+            maxHeight: 200,
+            storageOptions: {
+                skipBackup: true
+            },
+            mediaType: 'photo',
+            noData: true
+        };
+
+        launchImageLibrary(options, response => {
+            console.log({ response });
+
+            if (response.didCancel) {
+                console.log('User cancelled photo picker');
+                Alert.alert('You did not select any image');
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                let source = { uri: response.uri };
+                console.log({ source });
+                setImageSource(source.uri);
+            }
+        });
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Fontisto name="male" size={50} style={{ paddingLeft: 20, color: 'gray' }} />
-                <Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 25 }}>Name</Text>
+                <View style={{ height: 75, width: 75, borderRadius: 75 / 2, color: 'red', height: 120, width: 120, alignItems: 'center', justifyContent: 'center' }}>
+                    {imageSource === null ? (
+                        <Image
+                            source={require('../../../assets/images/defaultAvatar.png')}
+                            style={{ width: 100, backgroundColor: 'white', height: 100, borderRadius: 100 / 2 }}
+                            resizeMode='contain'
+                        />
+                    ) : (
+                        <Image
+                            source={{ uri: imageSource }}
+                            style={{ width: 200, height: 100 }}
+                            resizeMode='contain'
+                        />
+                    )}
+                </View>
+                <TouchableOpacity
+                    onPress={selectImage}
+                    style={{
+                        backgroundColor: '#5698cb',
+                        height: 30,
+                        width: 120,
+                        borderRadius: 7,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Text style={{ fontSize: 18, color: 'white' }}>Change Avtar</Text>
+                </TouchableOpacity>
             </View>
             <View style={{ width: '100%', marginLeft: 40 }}
             >

@@ -28,7 +28,17 @@ const Prescription = (props) => {
         '09': 'Sep',
         '10': 'Oct',
         '11': 'Nov',
-        '12': 'Dec'
+        '12': 'Dec',
+    }
+
+    var allColors = {
+        '0': '#009788',
+        '1': '#d91a60',
+        '2': '#ff8b66',
+        '3': '#3367d5',
+        '4': '#566e7a',
+        '5': '#5a5a5a',
+        '6': '#d14126',
     }
 
     return (
@@ -38,7 +48,7 @@ const Prescription = (props) => {
                 {
                     backgroundColor: pressed
                         ? 'lightgrey'
-                        : '#d14126'
+                        : allColors[Math.floor((Math.random() * 7))]
                 },
             ]}
             onPress={next}

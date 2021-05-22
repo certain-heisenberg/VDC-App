@@ -7,7 +7,8 @@ import PosterList from '../components/PosterList/index';
 import HomeTabNavigator from './HomeTabNavigator';
 import PatientProfile from '../screens/PatientProfile/index';
 import Introduction from '../screens/Introduction/index';
-import AppointmentScreen from '../screens/AppointmentScreen/index';
+import AppointmentScreen1 from '../screens/AppointmentScreen/screen1';
+import AppointmentScreen2 from '../screens/AppointmentScreen/screen2';
 import MakeAppointmentScreen1 from '../screens/MakeAppointmentScreen/screen1';
 import MakeAppointmentScreen2 from '../screens/MakeAppointmentScreen/screen2';
 import MakeAppointmentScreen3 from '../screens/MakeAppointmentScreen/screen3';
@@ -59,12 +60,21 @@ const Router = () => {
                 />
 
                 <Stack.Screen
-                    name={'Appointment Screen'}
-                    component={AppointmentScreen}
+                    name={'Appointment Screen 1'}
+                    component={AppointmentScreen1}
                     options={{
                         headerShown: false,
                     }}
                 />
+
+                <Stack.Screen
+                    name={'Appointment Screen 2'}
+                    component={AppointmentScreen2}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+
 
                 <Stack.Screen
                     name={'Make Appointment Screen 1'}

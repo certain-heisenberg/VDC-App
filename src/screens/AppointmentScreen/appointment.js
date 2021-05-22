@@ -1,0 +1,42 @@
+export default [
+    {
+        id: '0',
+        doctor: 'Dr. Pradeep Mahajan',
+        patient: 'Ajay Dayma',
+        date: '23-05-2021',
+        status: '1',
+        paid: '',
+    },
+    {
+        id: '1',
+        doctor: 'Dr Kalpana Nagpal',
+        patient: 'Nitesh Kumar',
+        date: '28-05-2021',
+        status: '1',
+        paid: '',
+    },
+    {
+        id: '2',
+        doctor: 'Dr Ishwar Bohra',
+        patient: 'Prashant Shekhar',
+        date: '15-05-2021',
+        status: '2',
+        paid: '',
+    },
+    {
+        id: '3',
+        doctor: 'Dr. Avtar Singh Bath',
+        patient: 'Ajay Dayma',
+        date: '28-04-2021',
+        status: '0',
+        paid: '',
+    },
+    {
+        id: '4',
+        doctor: 'Dr. Pradeep Mahajan',
+        patient: 'Kishan Kumar',
+        date: '22-03-2021',
+        status: '0',
+        paid: '',
+    },
+];

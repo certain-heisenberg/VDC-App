@@ -18,7 +18,7 @@ const Introduction = () => {
 
     return (
         <View style={styles.container}>
-            <Text h3 style={{ marginBottom: 50, fontSize: 30, color: '#f15454' }}>Who are you? </Text>
+            <Text h3 style={{ marginBottom: 50, fontSize: 30, color: 'black' }}>Who are you? </Text>
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: 250 }}>
                 <Pressable style={({ pressed }) => [
