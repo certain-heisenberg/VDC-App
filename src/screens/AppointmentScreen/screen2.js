@@ -15,7 +15,7 @@ const AppointmentScreen = () => {
             <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => navigation.navigate('Chat List Screen')}
+                    onPress={() => navigation.navigate('Chat Room List Screen')}
                 >
                     <Text style={styles.buttonText}
 

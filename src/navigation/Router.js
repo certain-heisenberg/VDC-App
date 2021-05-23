@@ -20,6 +20,7 @@ import MakeAppointmentScreen5 from '../screens/MakeAppointmentScreen/screen5';
 import PrescriptionScreen from '../screens/Prescription/screen2';
 import MakeAppointmentScreen6 from '../screens/MakeAppointmentScreen/screen6';
 import ChatRoomList from '../screens/Chat/screen1';
+import ChatRoomScreen from '../screens/Chat/screen2';
 
 const Stack = createStackNavigator();
 
@@ -158,11 +159,21 @@ const Router = () => {
                 />
 
                 <Stack.Screen
-                    name={'Chat List Screen'}
+                    name={'Chat Room List Screen'}
                     component={ChatRoomList}
                     options={{
                         headerShown: false,
                     }}
+                />
+
+                <Stack.Screen
+                    name={'Chat Room Screen'}
+                    component={ChatRoomScreen}
+                    options={({ route }) => ({
+                        title: route.params.name,
+                    })
+
+                    }
                 />
 
 

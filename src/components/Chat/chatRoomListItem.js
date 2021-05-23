@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, ImageBackground, StyleSheet, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, Pressable, ImageBackground, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import moment from 'moment';
 
 const ChatRoomListItem = (props) => {
@@ -10,9 +10,12 @@ const ChatRoomListItem = (props) => {
 
     const user = chatRoom.users[1];
 
-    return (
-        <View style={styles.chatRoomContainer}>
+    const onClick = () => {
+        navigation.navigate("Chat Room Screen", { id: chatRoom.id, name: user.name });
+    }
 
+    return (
+        <TouchableOpacity style={styles.chatRoomContainer} onPress={onClick}>
             <View style={styles.leftContainer}>
                 <Image source={{ uri: user.imageUri }}
                     style={styles.avatar}
@@ -29,7 +32,7 @@ const ChatRoomListItem = (props) => {
             >
                 {moment(chatRoom.lastMessage.createdAt).format("DD/MM/YYYY")}
             </Text>
-        </View>
+        </TouchableOpacity>
     );
 };
 
