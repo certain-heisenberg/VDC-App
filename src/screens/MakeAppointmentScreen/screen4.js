@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         height: '100%',
         flex: 1,
         width: '100%',
+        paddingBottom: 5
     },
 
 });
