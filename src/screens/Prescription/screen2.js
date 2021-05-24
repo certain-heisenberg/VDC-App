@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const PrescriptionScreen = () => {
     const navigation = useNavigation();
@@ -10,20 +11,24 @@ const PrescriptionScreen = () => {
     const id = Math.floor(route.params?.id);
 
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={{ fontSize: 20, marginLeft: 15, color: 'white' }}>Dowload Prescription</Text>
-            </View>
-            <View style={{ alignItems: 'center', marginTop: 40 }}>
-                <Text style={{ fontSize: 20 }}>Prescription ID: {id}</Text>
-            </View>
 
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={{ fontSize: 16, color: 'white' }}>GET PRESCRIPTION</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+        <View style={styles.container}>
+            <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#a5d49e', '#cdcdad', '#f1c1b8']} style={styles.linearGradient}>
+
+                < View style={styles.header} >
+                    <Text style={{ fontSize: 20, marginLeft: 15, color: 'white' }}>Dowload Prescription</Text>
+                </View>
+                <View style={{ alignItems: 'center', marginTop: 40 }}>
+                    <Text style={{ fontSize: 20, color: 'black' }}>Prescription ID: {id}</Text>
+                </View>
+
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.button}>
+                        <Text style={{ fontSize: 16, color: 'white' }}>GET PRESCRIPTION</Text>
+                    </TouchableOpacity>
+                </View>
+            </LinearGradient>
+        </View >
     );
 };
 
@@ -57,6 +62,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: 200,
         marginTop: 100
+    },
+    linearGradient: {
+        flex: 1,
     }
 });
 
