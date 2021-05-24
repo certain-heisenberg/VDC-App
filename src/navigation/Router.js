@@ -83,6 +83,7 @@ const Router = () => {
                     component={MakeAppointmentScreen1}
                     options={{
                         headerShown: false,
+                        title: 'Create an Appointment'
                     }}
                 />
 
@@ -97,7 +98,9 @@ const Router = () => {
                     name={'Make Appointment Screen 3'}
                     component={MakeAppointmentScreen3}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
+                        title: 'Consultation Mode'
+
                     }}
                 />
 
@@ -105,7 +108,8 @@ const Router = () => {
                     name={'Make Appointment Screen 4'}
                     component={MakeAppointmentScreen4}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
+                        title: 'Choose Consultant'
                     }}
                 />
 
@@ -154,7 +158,8 @@ const Router = () => {
                     name={'Prescription Screen'}
                     component={PrescriptionScreen}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
+                        title: 'Prescription'
                     }}
                 />
 
@@ -162,7 +167,8 @@ const Router = () => {
                     name={'Chat Room List Screen'}
                     component={ChatRoomList}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
+                        title: 'Chat Rooms'
                     }}
                 />
 

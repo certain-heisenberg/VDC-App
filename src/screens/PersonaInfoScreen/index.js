@@ -133,7 +133,7 @@ const PersonalInfoScreen = () => {
             >
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Username</Text>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5 }}>Username</Text>
                     <Fontisto name="user-secret" size={25} color="black" />
                 </View>
                 <TextInput
@@ -147,7 +147,7 @@ const PersonalInfoScreen = () => {
                 />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Email</Text>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5 }}>Email</Text>
                     <MaterialCommunityIcons name="email-outline" size={25} color="black" />
                 </View>
                 <TextInput
@@ -161,7 +161,7 @@ const PersonalInfoScreen = () => {
                 />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Contact</Text>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5 }}>Contact</Text>
                     <FontAwesome5 name="mobile-alt" size={25} color="black" />
                 </View>
                 <TextInput
@@ -207,7 +207,7 @@ const PersonalInfoScreen = () => {
                         {
                             backgroundColor: pressed
                                 ? 'white'
-                                : '#f15454'
+                                : '#3d9eda'
                         },
                     ]}
                     onPress={handleSavePress}

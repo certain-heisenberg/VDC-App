@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -22,7 +22,7 @@ export default function VideoLoginScreen(props) {
     return (
         <View style={styles.root}>
             <View style={styles.content}>
-                <Text style={styles.heading}>Enter your id</Text>
+                <Text style={styles.heading}>Enter your ID</Text>
                 <TextInput
                     label="Your  ID"
                     onChangeText={text => setUserId(text)}
@@ -38,7 +38,12 @@ export default function VideoLoginScreen(props) {
                     contentStyle={styles.btnContent}
                     disabled={userId.length === 0}>
                     Login
-        </Button>
+                </Button>
+
+                <Image source={require('../../../assets/images/videocallbg.jpg')}
+                    resizeMode='contain'
+                    style={styles.image}
+                />
             </View>
         </View>
     );
@@ -59,7 +64,7 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 18,
         marginBottom: 10,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     input: {
         height: 60,
@@ -76,4 +81,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         height: 60,
     },
+    image: {
+        width: '100%',
+        backgroundColor: 'white',
+        height: '51%',
+        borderRadius: 100 / 2
+    }
 });

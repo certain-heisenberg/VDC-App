@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         width: '40%',
         backgroundColor: '#e33062',
         height: 45,
-        borderRadius: 7
+        borderRadius: 25
 
     }
 });

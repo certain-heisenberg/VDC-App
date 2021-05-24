@@ -7,8 +7,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import Entypo from 'react-native-vector-icons/Entypo';
 
-
-
 const ChatInputBox = () => {
     const navigation = useNavigation();
 

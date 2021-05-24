@@ -8,6 +8,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import HomeScreen from '../screens/HomeScreen/index';
 import PrescriptionList from '../screens/Prescription/screen1';
+import NotificationScreen from '../screens/Notification/index';
 
 
 const Tab = createBottomTabNavigator();
@@ -38,11 +39,12 @@ const HomeTabNavigator = () => {
             />
             <Tab.Screen
                 name={'Notification'}
-                component={PatientProfile}
+                component={NotificationScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Fontisto name="bell" size={25} color={color} />
-                    )
+                    ),
+                    headerShown: true,
                 }}
             />
             <Tab.Screen

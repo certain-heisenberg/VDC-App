@@ -21,6 +21,7 @@ const MakeAppointmentScreen5 = () => {
         <ScrollView style={styles.container}>
             <Image style={styles.image}
                 source={image}
+                resizeMode='contain'
             />
 
             <View style={{ alignItems: 'center' }}>
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
         height: '100%',
         flex: 1,
         width: '100%',
+        padding: 1
     },
     button: {
         backgroundColor: '#e33062',

@@ -88,15 +88,17 @@ const MakeAppointmentScreen2 = () => {
                         {
                             backgroundColor: pressed
                                 ? 'white'
-                                : '#f15454'
+                                : '#3d9eda'
                         },
                     ]}
                 >
                     {/* {loading && <ActivityIndicator />} */}
                     {<ActivityIndicator />}
 
-                    <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Book</Text>
+                    <Text style={{ fontSize: 20, color: "white", fontWeight: "bold", marginRight: 14 }}>Book</Text>
                 </Pressable>
+
+
 
             </SafeAreaView>
 
@@ -135,14 +137,15 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#e33062',
-        width: '87%',
+        width: '55%',
         height: 50,
-        borderRadius: 5,
+        borderRadius: 25,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30,
         flexDirection: 'row',
         marginBottom: 25,
+        marginHorizontal: 60
     }
     ,
     buttonText: {

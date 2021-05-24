@@ -13,11 +13,14 @@ const styles = StyleSheet.create({
         width: 100,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10
+        borderRadius: 30
     },
     buttonText: {
         color: '#fff',
         fontWeight: 'bold',
+    },
+    icon: {
+        marginHorizontal: 35
     }
 });
 

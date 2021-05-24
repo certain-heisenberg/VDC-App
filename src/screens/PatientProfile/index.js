@@ -29,7 +29,7 @@ const PatientProfile = () => {
                     style={{ width: 100, backgroundColor: 'white', height: 100, borderRadius: 100 / 2 }}
                     resizeMode='contain'
                 />
-                <Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 25 }}>Name</Text>
+                <Text style={{ fontSize: 25, fontWeight: '700', marginLeft: 20 }}>Username</Text>
             </View>
 
             <Pressable style={({ pressed }) => [

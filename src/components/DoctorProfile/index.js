@@ -17,13 +17,14 @@ const DoctorProfile = (props) => {
         <View style={styles.cardContainer}>
             <Image style={styles.image}
                 source={image}
+                resizeMode='contain'
             />
 
             <View style={styles.textContainer}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#2F4F4F' }}>{name}</Text>
                 <Text style={{ fontSize: 16, color: '#737373', marginTop: 5 }}>{experience} Years of experience</Text>
                 <Text style={{ fontSize: 16, marginTop: 5, color: '#FFA500', fontWeight: 'bold' }}>Speciality in {speciality}</Text>
-                <Text style={{ fontSize: 16, marginTop: 5 }}>Fee: {'\u20B9'}{fee}</Text>
+                <Text style={{ fontSize: 16, marginTop: 5, fontWeight: '700' }}>Fee: {'\u20B9'}{fee}</Text>
                 <Pressable
                     style={({ pressed }) => [
                         styles.button,

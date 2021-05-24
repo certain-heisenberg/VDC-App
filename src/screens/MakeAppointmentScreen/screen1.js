@@ -66,7 +66,7 @@ const MakeAppointmentScreen1 = () => {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.container}>
-            <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Create an Appointment</Text>
+            <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15, marginBottom: 3 }}>Create an Appointment</Text>
             <ScrollView style={styles.textContainer} keyboardShouldPersistTaps='always'
             >
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
@@ -169,14 +169,14 @@ const MakeAppointmentScreen1 = () => {
                         {
                             backgroundColor: pressed
                                 ? 'white'
-                                : '#f15454'
+                                : '#3d9eda'
                         },
                     ]}
                 >
                     {/* {loading && <ActivityIndicator />} */}
                     {<ActivityIndicator />}
 
-                    <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Next</Text>
+                    <Text style={{ fontSize: 20, color: "white", fontWeight: "bold", marginRight: 14 }}>Next</Text>
                 </Pressable>
 
             </ScrollView >
@@ -204,14 +204,15 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#e33062',
-        width: '87%',
+        width: '55%',
         height: 50,
-        borderRadius: 5,
+        borderRadius: 25,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30,
         flexDirection: 'row',
         marginBottom: 25,
+        marginHorizontal: 60
     }
     ,
     buttonText: {

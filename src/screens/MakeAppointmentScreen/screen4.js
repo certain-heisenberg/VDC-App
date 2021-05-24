@@ -12,7 +12,6 @@ const MakeAppointmentScreen4 = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Choose Consultant</Text>
 
             <FlatList
                 data={doctors}

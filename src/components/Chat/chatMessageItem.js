@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     time: {
         alignSelf: 'flex-end',
         color: 'grey',
+        fontSize: 12
     }
 });
 
