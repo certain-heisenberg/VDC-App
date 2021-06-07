@@ -268,7 +268,7 @@ const MakeAppointmentScreen6 = () => {
                 {/* {loading && <ActivityIndicator />} */}
                 {<ActivityIndicator />}
 
-                <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>Confirm</Text>
+                <Text style={{ fontSize: 20, color: "white", fontWeight: "bold", marginRight: 15 }}>Confirm</Text>
             </Pressable>
         </View>
     );
@@ -280,18 +280,18 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         justifyContent: 'center',
+        backgroundColor: 'white',
     },
     button: {
         backgroundColor: '#e33062',
-        width: '87%',
         height: 50,
-        borderRadius: 5,
+        borderRadius: 40,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30,
         flexDirection: 'row',
         marginBottom: 25,
-        marginHorizontal: 23
+        marginHorizontal: 90
     },
 });
 

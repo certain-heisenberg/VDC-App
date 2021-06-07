@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Dimensions } from 'react-native';
+import { View, Text, FlatList, Dimensions, SafeAreaView } from 'react-native';
 
 import styles from './styles';
 import poster from './poster';
@@ -12,7 +12,7 @@ const PosterList = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Header />
             <FlatList
                 data={poster}
@@ -23,7 +23,7 @@ const PosterList = () => {
                 showsScrollIndicator={false}
                 keyExtractor={(item, index) => index.toString()}
             />
-        </View>
+        </SafeAreaView>
     );
 }
 

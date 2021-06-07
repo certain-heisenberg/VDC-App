@@ -120,7 +120,7 @@ const PersonalInfoScreen = () => {
                     style={{
                         backgroundColor: '#5698cb',
                         height: 30,
-                        width: 120,
+                        width: 150,
                         borderRadius: 7,
                         alignItems: 'center',
                         justifyContent: 'center'
@@ -133,7 +133,7 @@ const PersonalInfoScreen = () => {
             >
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5 }}>Username</Text>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 9, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5, paddingHorizontal: 8 }}>Username</Text>
                     <Fontisto name="user-secret" size={25} color="black" />
                 </View>
                 <TextInput
@@ -147,7 +147,7 @@ const PersonalInfoScreen = () => {
                 />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5 }}>Email</Text>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 9, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5, paddingHorizontal: 8 }}>Email</Text>
                     <MaterialCommunityIcons name="email-outline" size={25} color="black" />
                 </View>
                 <TextInput
@@ -161,7 +161,7 @@ const PersonalInfoScreen = () => {
                 />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5 }}>Contact</Text>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 9, backgroundColor: !isEnabled ? 'lightgrey' : 'white', borderRadius: 5, paddingHorizontal: 8 }}>Contact</Text>
                     <FontAwesome5 name="mobile-alt" size={25} color="black" />
                 </View>
                 <TextInput

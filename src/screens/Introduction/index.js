@@ -22,7 +22,7 @@ const Introduction = () => {
             {/* <Text h3 style={{ marginBottom: 50, fontSize: 30, color: 'black' }}>Who are you? </Text> */}
             <View style={{ marginBottom: 30, flexDirection: 'row' }}>
                 <FontAwesome name="stethoscope" size={95} color="black" style={styles.icon} />
-                <FontAwesome5 name="head-side-mask" size={82} color="black" style={styles.icon} />
+                <FontAwesome5 name="head-side-mask" size={81} color="black" style={styles.icon} />
             </View>
 
 

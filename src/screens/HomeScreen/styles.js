@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
     buttonsContainer: {
         height: 100,
-        marginHorizontal: 20,
+        marginHorizontal: 15,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,

@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions } from "react-native";
 const styles = StyleSheet.create({
     posterContainer: {
         width: '100%',
-        height: Dimensions.get('window').height
+        height: Dimensions.get('window').height,
     },
     titles: {
         marginTop: '45%',

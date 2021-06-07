@@ -37,21 +37,6 @@ const MakeAppointmentScreen2 = () => {
             <Text h3 style={{ fontSize: 30, color: '#f15454', marginLeft: 21, marginTop: 15 }}>Problem</Text>
             <SafeAreaView style={styles.textContainer}
             >
-
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
-                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Description</Text>
-                    <MaterialIcons name="description" size={25} color="black" />
-                </View>
-
-
-
-                <TextInput
-                    style={[styles.input, { height: 160, textAlignVertical: 'top' }]}
-                    placeholder={"Brief Description"}
-                    value={problem}
-                    onChangeText={setProblem}
-                    multiline={true}
-                />
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
                     <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Specialist</Text>
                     <Fontisto name="doctor" size={25} color="black" />
@@ -70,6 +55,22 @@ const MakeAppointmentScreen2 = () => {
                     }}
                     listMode="SCROLLVIEW"
                 />
+
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
+                    <Text style={{ fontSize: 20, color: 'black', marginRight: 10 }}>Description</Text>
+                    <MaterialIcons name="description" size={25} color="black" />
+                </View>
+
+
+
+                <TextInput
+                    style={[styles.input, { height: 160, textAlignVertical: 'top' }]}
+                    placeholder={"Brief Description"}
+                    value={problem}
+                    onChangeText={setProblem}
+                    multiline={true}
+                />
+
 
 
 

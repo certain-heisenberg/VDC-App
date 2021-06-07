@@ -25,25 +25,39 @@ const MakeAppointmentScreen5 = () => {
             />
 
             <View style={{ alignItems: 'center' }}>
-                <Text style={{ fontSize: 18, marginTop: 10, marginLeft: 7 }}>{name}</Text>
+                <Text style={{ fontSize: 19, marginTop: 10, marginLeft: 7, fontWeight: '700', color: '#7a583b' }}>{name}</Text>
             </View>
 
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                <Text style={{ marginLeft: 7 }}>{speciality}</Text>
-                <Text style={{ marginRight: 7 }}>Fee: {fee}</Text>
+                <View style={{ backgroundColor: '#4182a6', padding: 2, borderRadius: 5, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginLeft: 7, paddingHorizontal: 7 }}>
+                    <Text style={{ color: 'white' }}>{speciality}</Text>
+                </View>
+                <View style={{ backgroundColor: '#3a9c85', padding: 2, borderRadius: 5, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginRight: 7, paddingHorizontal: 7 }}>
+                    <Text style={{ color: 'white' }}>Fee: {'\u20B9'}{fee}</Text>
+                </View>
             </View>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                <Text style={{ marginLeft: 7 }}>{experience} Years of experience</Text>
-                <Text style={{ marginRight: 7 }}>{language}</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                <Text style={{ marginLeft: 7, color: 'brown' }}>{experience} Years of experience</Text>
+                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                    <Text style={{ marginRight: 7, color: '#fc7703' }}>{language}</Text>
+                </View>
             </View>
 
-            <Text style={{ fontSize: 16, marginTop: 10, marginLeft: 7 }}>Bio</Text>
+            <View style={{ borderBottomWidth: 1, borderColor: 'lightgrey', marginTop: 20, marginHorizontal: 5 }}>
+
+            </View>
+
+            <Text style={{ fontSize: 18, marginTop: 15, marginLeft: 7 }}>Bio</Text>
 
             <Text style={{ fontSize: 16, marginTop: 5, marginBottom: 10, marginLeft: 7 }}>{description}</Text>
 
-            <Text style={{ fontSize: 16, marginVertical: 10, marginLeft: 7 }}>Clinic Address</Text>
+            <View style={{ borderBottomWidth: 1, borderColor: 'lightgrey', marginTop: 20, marginHorizontal: 5 }}>
+
+            </View>
+
+            <Text style={{ fontSize: 18, marginVertical: 10, marginLeft: 7 }}>Clinic Address</Text>
             {/* {Address} */}
             <Text style={{ fontSize: 16, marginLeft: 7 }}>latitude: {coordinate.latitude}</Text>
             <Text style={{ fontSize: 16, marginLeft: 7 }}>longitude: {coordinate.longitude}</Text>
@@ -56,7 +70,7 @@ const MakeAppointmentScreen5 = () => {
                     {
                         backgroundColor: pressed
                             ? 'white'
-                            : '#f15454'
+                            : 'orange'
                     },
                 ]}
             >
@@ -77,16 +91,15 @@ const styles = StyleSheet.create({
         padding: 1
     },
     button: {
-        backgroundColor: '#e33062',
-        width: '87%',
+        backgroundColor: 'green',
         height: 50,
         borderRadius: 5,
         justifyContent: 'center',
+        flexDirection: 'row',
         alignItems: 'center',
         marginTop: 30,
-        flexDirection: 'row',
-        marginBottom: 25,
-        marginHorizontal: 23
+        marginBottom: 20,
+        marginHorizontal: 10
     },
     image: {
         width: '100%',

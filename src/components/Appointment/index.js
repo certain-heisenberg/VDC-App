@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Pressable, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Pressable, TouchableOpacity, Dimensions } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 
@@ -49,10 +49,11 @@ const Appointment = (props) => {
     var statusColor = {
         '0': '#54e21e',
         '1': 'yellow',
-        '2': '#ff05cc',
+        '2': '#5cffff',
     }
 
     const colorIndex = Math.floor((Math.random() * 5));
+    const index = Math.floor(id);
 
     return (
         <View style={styles.buttonContainer}>
@@ -61,7 +62,7 @@ const Appointment = (props) => {
                 style={[styles.button1, { backgroundColor: allColors[colorIndex] }]}
                 onPress={next}
             >
-                <Text style={{ color: 'white', fontSize: 20 }}>Appointment 1</Text>
+                <Text style={{ color: 'white', fontSize: 20 }}>Appointment {index + 1}</Text>
                 <Text style={{ color: 'white', fontSize: 14 }}>{doctor}</Text>
                 <Text style={{ color: 'white', fontSize: 14 }}>{aDate} {months[aMonth]} {aYear}</Text>
 
@@ -85,13 +86,12 @@ const styles = StyleSheet.create({
     button1: {
         backgroundColor: '#f15454',
         height: 110,
-        width: 168,
+        width: Dimensions.get('window').width / 2 - 12,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 5,
         marginBottom: 15,
-        marginRight: 5,
-
+        marginRight: 7,
     },
     // button2: {
     //     backgroundColor: '#f15454',
